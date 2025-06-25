@@ -30,7 +30,7 @@ def calcular_imc():
             imc = peso / (altura * altura)
             print(f"Seu IMC é {imc:.2f}.")
             print('')
-            break
+            menu()
 
 def categoria(x):
     print(f'{categorias[x-1]} - Lista de exercícios')
@@ -71,9 +71,11 @@ def menu():
     print('2- Superiores')
     print('3- Inferiores')
     print('4- Costas')
+    print('5- Cálculo de IMC')
     print(' ')
     opcao = int (input('Escolha uma aba para acessar: '))
-    categoria(opcao)
-
-calcular_imc()
+    if opcao == 5:
+        calcular_imc()
+    else:
+        categoria(opcao)
 menu()
